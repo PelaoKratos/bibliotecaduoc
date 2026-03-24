@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.bibliotecaduoc.model.Libro;
 import com.example.bibliotecaduoc.service.LibroService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 
 @RestController
+@RequestMapping("/api/v1/libros")
 public class LibroController {
     @Autowired
     private LibroService libroService;
