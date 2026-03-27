@@ -1,6 +1,7 @@
 package com.example.bibliotecaduoc.service;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,14 @@ public class LibroService {
 
     public Libro readbyIsbn(String isbn){
         return libroRepository.buscaPorisbn(isbn);
+    }
+
+    public List<String> obtenerTodosIsbn(){
+        List<String> isbns = new ArrayList<>();
+        for (Libro libro : libroRepository.obteneLibros()) {
+            isbns.add(libro.getIsbn());
+        }
+        return isbns;
     }
 
 

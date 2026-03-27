@@ -42,5 +42,11 @@ public class LibroController {
         return libroService.readbyId(id);
     }
 
+    //Obtener todos los ISBNs de los libros
+    @GetMapping("/isbn")
+    public List<String> obtenerTodosIsbn() {
+        return libroService.obtenerTodosIsbn();
+    }
+
     
 }
