@@ -72,4 +72,18 @@ public class LibroController {
         }
         return "No fue posible eliminar el libro";
     }
+
+    @GetMapping("mayores/{year}")
+    public List<Libro> getLibroMayores(@PathVariable int year) {
+        return libroService.getMayores(year);
+    }
+
+    //TODO: FALTA AGREGAR EL ENDPOINT PARA OBTENER LOS LIBROS POR RANGO DE AÑOS, Y EL ENDPOINT PARA OBTENER TODOS LOS ISBN DE LOS LIBROS DISPONIBLES EN LA BIBLIOTECA
+
+    //Obtener libros por rango de años
+    //@GetMapping("rango/{start}--{end}")
+    //public List<Libro> getLibrosRango(@PathVariable int start, @PathVariable int end) {
+    //    return libroService.getRango(start, end);
+    //}
+    
 }

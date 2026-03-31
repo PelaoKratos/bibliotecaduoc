@@ -92,4 +92,14 @@ public class LibroRepository {
         listaLibros.removeIf(b-> b.getId()==id);
         return true;
     }
+
+    public List<Libro> getMayores(int year) {
+        List<Libro> mayores=new ArrayList<>();
+        for (Libro libro : listaLibros) {
+            if(libro.getFechaPublicacion()>=year){
+                mayores.add(libro);
+            }
+        }
+        return mayores;
+    }
 }

@@ -54,4 +54,9 @@ public class LibroService {
         return libroRepository.modificarLibro(id, libro);
     }
 
+    public List<Libro> getMayores(int year) {
+        return libroRepository.getMayores(year);
+
+    }
+
 }
