@@ -1,6 +1,7 @@
 package com.example.bibliotecaduoc.repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -13,6 +14,16 @@ public class LibroRepository {
     
     //Arreglo que guardara todos los libros
     private List<Libro> listaLibros = new ArrayList<>();
+
+    public void cargarLibrosFake(){
+        listaLibros= new ArrayList<>(Arrays.asList(
+        new Libro(1, "978-84-376-0494-7", "Cien años de soledad", "Editorial Sudamericana", 1967, "Gabriel García Márquez"),
+        new Libro(2, "978-0-7432-7356-5", "El código Da Vinci", "Doubleday", 2003, "Dan Brown"),
+        new Libro(3, "978-84-204-6725-2", "Don Quijote de la Mancha", "Francisco de Robles", 1605, "Miguel de Cervantes"),
+        new Libro(4, "978-0-452-28423-4", "1984", "Secker & Warburg", 1949, "George Orwell"),
+        new Libro(5, "978-84-670-5190-9", "La sombra del viento", "Planeta", 2001, "Carlos Ruiz Zafón")
+        ));
+    }
 
     //Metodo que retorno todo los libros
     public List<Libro> obteneLibros(){

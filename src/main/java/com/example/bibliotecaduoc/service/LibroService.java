@@ -46,5 +46,9 @@ public class LibroService {
         return isbns;
     }
 
+    public void datosFake(){
+        libroRepository.cargarLibrosFake();
+    }
+
 
 }

@@ -38,14 +38,20 @@ public class LibroController {
     
     //Para buscar solo por id, usa la misma url pero al final se agrega el id que quieres
     @GetMapping("{id}")
-    public Libro buscaLibro(@PathVariable int id) {
+    public Libro getLibroId(@PathVariable int id) {
         return libroService.readbyId(id);
     }
 
-    //Obtener todos los ISBNs de los libros
-    @GetMapping("/isbn")
-    public List<String> obtenerTodosIsbn() {
-        return libroService.obtenerTodosIsbn();
+    //Obtener un libro por ISBN
+    @GetMapping("isbn/{isbn}")
+    public Libro getLibroByIsbn(@PathVariable String isbn) {
+        return libroService.readbyIsbn(isbn);
+    }
+
+    @GetMapping("seed")
+    public String getSeed() {
+        libroService.datosFake();
+        return "Datos cargados";
     }
 
     
