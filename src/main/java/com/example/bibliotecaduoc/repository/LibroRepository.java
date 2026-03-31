@@ -74,4 +74,22 @@ public class LibroRepository {
     public void eliminar(int id){
         listaLibros.removeIf(book -> book.getId()==id);
     }
+
+    public Libro modificarLibro(int id, Libro libro) {
+        Libro libroDestino=buscaPorId(id);
+        if(libroDestino!=null){
+            libroDestino.setIsbn(libro.getIsbn());
+            libroDestino.setAutor(libro.getAutor());
+            libroDestino.setEditorial(libro.getEditorial());
+            libroDestino.setFechaPublicacion(libro.getFechaPublicacion());
+            libroDestino.setTitulo(libro.getTitulo());
+            return libroDestino;
+        }
+        return null;
+    }
+
+    public boolean eliminarLibro(int id){
+        listaLibros.removeIf(b-> b.getId()==id);
+        return true;
+    }
 }
